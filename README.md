@@ -1,0 +1,2 @@
+# AdhaanPi
+This script (designed basically for the Raspberry Pi, but can run on most platforms) checks prayer times once a day using the Al-Adhan API with user-selectable settings. It then plays the Adhan of choice at each of the prayer times through the speakers. In addition, users can opt-in for a once-a-day notification regarding the current Hijri date, as well as the last update of prayer times.
