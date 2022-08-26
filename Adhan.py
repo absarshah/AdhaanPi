@@ -139,6 +139,9 @@ while (1):
 
 	# DAILY ANNOUNCEMENT 
 	# Announce todays date and last date of times fetched at a fixed time exery day
+	# Here the option to manually trigger the announcement is considered e.g., via an external script
+	# The announcement can be triggered by creating a blank "trigger.txt" file in the same path as the script
+	# The script will delete the trigger file after executing it once
 
 	if (((currTime == announcementTime) and (announcement == 1) and (announced == 0)) or os.path.isfile(scriptPath + "trigger.txt")):
 		tts = gtts.gTTS("Assalam-o-alaikum!", lang = "ar", slow = False)
