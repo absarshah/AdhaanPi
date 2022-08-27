@@ -91,8 +91,12 @@ announced = 0
 
 while (1):
 	# Fetch prayer times once a day, in addition to todays Hijra date
-	nToday = date.today()
-	if (today != nToday) or (runToday == 0):
+	
+	# Get current time
+	cTime = time.localtime()
+	currTime = time.strftime("%H:%M", cTime)
+	
+	if (currTime == "00:30") or (runToday == 0):
 		# Use aladhan API to get prayer times
 		x = requests.get(URL)
 		prayerTimesGet = x.text
@@ -116,10 +120,6 @@ while (1):
 		today = nToday
 		runToday = 1
 		announced = 0
-
-	# Get current time
-	cTime = time.localtime()
-	currTime = time.strftime("%H:%M", cTime)
 
 	# Check if current time matches with a prayer time, and if user has opted to play the Azaan during this time
 	if ((currTime ==  prayerTimes['Fajr']) and (azaanFajr == 1)):
